@@ -1,6 +1,8 @@
 # Changelog
 
 
+### [0.1.5](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.4...v0.1.5) (2023-07-08)
+
 ### [0.1.4](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.3...v0.1.4) (2023-07-08)
 
 
