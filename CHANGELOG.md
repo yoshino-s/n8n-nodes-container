@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [0.1.4](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.3...v0.1.4) (2023-07-08)
+
+
+### Features
+
+* **deps:** move unnecessary packs to devdeps ([2aa0255](https://github.com/yoshino-s/n8n-nodes-container/commit/2aa02554fdc31cc2aa818eccdeab8bf81f2b9753))
+
 ### [0.1.3](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.2...v0.1.3) (2023-07-08)
 
 
