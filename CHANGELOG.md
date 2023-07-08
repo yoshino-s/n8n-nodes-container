@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [0.1.3](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.2...v0.1.3) (2023-07-08)
+
+
+### Bug Fixes
+
+* **ci:** fix publish condition ([bb2db59](https://github.com/yoshino-s/n8n-nodes-container/commit/bb2db5929af3aae714f607bf10319710264d1ec6))
+
 ### 0.1.2 (2023-07-08)
 
 
