@@ -67,7 +67,10 @@
     "prettier": "^2.8.3",
     "standard-version": "^9.5.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "glob": "^8.1.0",
+    "n8n-core": "^0.152.0",
+    "n8n-workflow": "^0.134.0"
   },
   "config": {
     "commitizen": {
@@ -86,9 +89,6 @@
     "header": "# Changelog\n\n"
   },
   "dependencies": {
-    "dockerode": "^3.3.5",
-    "glob": "^8.1.0",
-    "n8n-core": "^0.152.0",
-    "n8n-workflow": "^0.134.0"
+    "dockerode": "^3.3.5"
   }
 }
