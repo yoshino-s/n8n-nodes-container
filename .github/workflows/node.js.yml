@@ -10,7 +10,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  publish:
+    # publish when has a tag
+    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
@@ -23,3 +25,13 @@ jobs:
     - run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '16.x'
+    - run: yarn install
+    - run: yarn build
+    - run: yarn lint

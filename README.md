@@ -20,6 +20,8 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 We add a new node called `Docker`, which allow users interact with docker
 
+![screenshot](screenshot.png)
+
 ## Credentials
 
 We add a new credential, which can be socket path or remote docker host
