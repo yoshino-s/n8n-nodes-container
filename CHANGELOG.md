@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [0.1.6](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.5...v0.1.6) (2023-09-08)
+
+
+### Bug Fixes
+
+* **container:** fix docker node output ([fbaf102](https://github.com/yoshino-s/n8n-nodes-container/commit/fbaf102e8faf2f72af1507817152541487149349))
+
 ### [0.1.5](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.4...v0.1.5) (2023-07-08)
 
 ### [0.1.4](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.3...v0.1.4) (2023-07-08)
