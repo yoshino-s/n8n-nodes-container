@@ -61,8 +61,7 @@ export class Docker implements INodeType {
 			name: "Docker",
 		},
 		inputs: ["main"],
-		// eslint-disable-next-line n8n-nodes-base/node-class-description-outputs-wrong
-		outputs: ["main", "other"],
+		outputs: ["main"],
 		credentials: [
 			{
 				name: "dockerCredentialsApi",
