@@ -2,6 +2,7 @@ import { Writable } from "node:stream";
 
 import Dockerode from "dockerode";
 import {
+	IDataObject,
 	IExecuteFunctions,
 	INodeExecutionData,
 	INodeType,
@@ -55,7 +56,8 @@ export class Docker implements INodeType {
 		icon: "file:docker.svg",
 		group: ["output"],
 		version: 1,
-		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
+		subtitle:
+			'={{$parameter["operation"] + ": " + $parameter["resource"]}}',
 		description: "Interact with Docker",
 		defaults: {
 			name: "Docker",
@@ -169,7 +171,7 @@ export class Docker implements INodeType {
 	async execute(
 		this: IExecuteFunctions
 	): Promise<INodeExecutionData[][] | NodeExecutionWithMetadata[][]> {
-		const result: INodeExecutionData[][] = [];
+		const result: INodeExecutionData[] = [];
 		for (let idx = 0; idx < this.getInputData().length; idx++) {
 			const credentials = await this.getCredentials(
 				"dockerCredentialsApi",
@@ -182,7 +184,7 @@ export class Docker implements INodeType {
 				);
 			}
 			const docker = new Dockerode(credentials);
-			let data: any = undefined;
+			let data: IDataObject = undefined;
 			const operation = this.getNodeParameter("operation", idx) as string;
 
 			if (operation === "run") {
@@ -203,9 +205,11 @@ export class Docker implements INodeType {
 						AutoRemove: true,
 					},
 				});
-				console.log(data);
 			} else {
-				const resource = this.getNodeParameter("resource", idx) as string;
+				const resource = this.getNodeParameter(
+					"resource",
+					idx
+				) as string;
 				let options: any = undefined;
 				if (operation === "list") {
 					options = this.getNodeParameter("options", idx);
@@ -215,15 +219,22 @@ export class Docker implements INodeType {
 				const action = `${operation}${resource[0].toUpperCase()}${resource.slice(
 					1
 				)}${operation === "list" ? "s" : ""}`;
-				this.sendMessageToUI("credentials:" + JSON.stringify(credentials));
+				this.sendMessageToUI(
+					"credentials:" + JSON.stringify(credentials)
+				);
 				this.sendMessageToUI("action:" + JSON.stringify(action));
 
 				data = await docker[action](options);
 			}
 
-			result.push(this.helpers.returnJsonArray(data));
+			result.push(
+				...this.helpers.constructExecutionMetaData(
+					this.helpers.returnJsonArray(data),
+					{ itemData: { item: idx } }
+				)
+			);
 		}
 
-		return result;
+		return [result];
 	}
 }
