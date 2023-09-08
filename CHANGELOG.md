@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [0.1.8](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.7...v0.1.8) (2023-09-08)
+
+
+### Bug Fixes
+
+* fix name error ([e9c8dab](https://github.com/yoshino-s/n8n-nodes-container/commit/e9c8dab18f44ee5c55675b743f50c405f9be534f))
+
 ### [0.1.7](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.6...v0.1.7) (2023-09-08)
 
 
