@@ -1,6 +1,13 @@
 # Changelog
 
 
+### [0.1.7](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.6...v0.1.7) (2023-09-08)
+
+
+### Features
+
+* **k8s:** add k8s node ([c96e204](https://github.com/yoshino-s/n8n-nodes-container/commit/c96e204bfd75cbfd226e7362b71263b1efbdd18e))
+
 ### [0.1.6](https://github.com/yoshino-s/n8n-nodes-container/compare/v0.1.5...v0.1.6) (2023-09-08)
 
 
